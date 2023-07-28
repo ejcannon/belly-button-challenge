@@ -1,6 +1,5 @@
 // // url
-const url =
-    "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
 
 // json
 const dataPromise = d3.json(url);
@@ -28,9 +27,9 @@ function dropDown(value) {
     const currentId = samples.find((item) => item.id === value);
     const demographicInfo = metadata.find((item) => item.id == value);
 
-    demoInfo(demographicInfo);
     barChart(currentId);
     bubble(currentId);
+    demoInfo(demographicInfo);
 
 }
 // bar chart
