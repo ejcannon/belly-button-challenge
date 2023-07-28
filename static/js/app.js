@@ -19,7 +19,7 @@ d3.json(url).then(function (data) {
     data.names.forEach((id) => {
         selectId.append("option").text(id).property("value", id);
     });
-    barChart(samples[0]);
+    bar_Chart(samples[0]);
     bubble(samples[0]);
     demoInfo(metadata[0]);
 });
@@ -29,12 +29,12 @@ function dropDown(value) {
     const demographicInfo = metadata.find((item) => item.id == value);
 
     demoInfo(demographicInfo);
-    barChart(currentId);
+    bar_Chart(currentId);
     bubble(currentId);
 
 }
 // bar chart
-function barChart(currentId) {
+function bar_Chart(currentId) {
     let xAxis = currentId.sample_values.slice(0, 10).reverse();
     let yAxis = currentId.otu_ids
         .slice(0, 10)
